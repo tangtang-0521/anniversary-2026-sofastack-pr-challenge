@@ -13,7 +13,7 @@
         .tag-easy { background: #238636; }
         .tag-medium { background: #9e6a03; }
         .tag-hard, .tag-difficulty { background: #da3633; }
-        .tab-btn { position: relative; padding: 8px 12px; transition: color 0.3s; white-space: nowrap; color: #8b949e; font-size: 14px; }
+        .tab-btn { position: relative; padding: 10px 16px; transition: color 0.3s; white-space: nowrap; color: #8b949e; font-size: 14px; flex-shrink: 0; }
         .tab-btn.active { color: #58a6ff; font-weight: bold; }
         .tab-btn.active::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: #58a6ff; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -22,24 +22,25 @@
 <body class="p-4 md:p-8">
 
     <header class="text-center mb-8">
-        <h1 class="text-3xl font-bold mb-2 tracking-tight" style="text-shadow: 0 0 10px rgba(88,166,255,0.5)">🦐 养虾修代码</h1>
+        <h1 class="text-3xl font-bold mb-2 tracking-tight" style="text-shadow: 0 0-10px rgba(88,166,255,0.5)">🦐 养虾修代码</h1>
         <p class="text-blue-400 font-semibold mb-2">SOFAStack 8th Anniversary PR Challenge</p>
-        <p class="text-[10px] text-gray-500 uppercase tracking-widest">Total 32 Hackable Issues Identified</p>
+        <p class="text-[10px] text-gray-500 uppercase tracking-widest italic">32 Real Issues Waiting for Your AI Agent</p>
     </header>
 
-    <nav class="flex overflow-x-auto gap-2 mb-6 border-b border-gray-800 no-scrollbar sticky top-0 bg-[#0d1117] z-10 py-2 justify-start md:justify-center">
+    <nav class="flex overflow-x-auto gap-2 mb-6 border-b border-gray-800 no-scrollbar sticky top-0 bg-[#0d1117] z-10 py-2 justify-start md:justify-center px-2">
         <button onclick="filterProject('all', this)" class="tab-btn active">全部项目 (32)</button>
-        <button onclick="filterProject('SOFA Registry', this)" class="tab-btn">Registry (7)</button>
-        <button onclick="filterProject('SOFA JRaft', this)" class="tab-btn">JRaft (6)</button>
-        <button onclick="filterProject('SOFARPC', this)" class="tab-btn">RPC (10)</button>
-        <button onclick="filterProject('SOFABoot', this)" class="tab-btn">Boot (9)</button>
+        <button onclick="filterProject('SOFA Registry', this)" class="tab-btn">SOFA Registry (7)</button>
+        <button onclick="filterProject('SOFA JRaft', this)" class="tab-btn">SOFA JRaft (6)</button>
+        <button onclick="filterProject('SOFARPC', this)" class="tab-btn">SOFARPC (10)</button>
+        <button onclick="filterProject('SOFABoot', this)" class="tab-btn">SOFABoot (9)</button>
     </nav>
 
     <div id="issue-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
         </div>
 
     <footer class="mt-16 text-center pb-12 border-t border-gray-800 pt-8 text-gray-500">
-        <p class="text-sm">Ready? Let's hack with AI! 🚀🦐</p>
+        <p class="text-sm tracking-widest">READY? LET'S HACK WITH AI! 🚀🦐</p>
+        <p class="text-[10px] mt-2 opacity-50">© 2026 SOFAStack Open Source Community</p>
     </footer>
 
     <script>
@@ -55,7 +56,7 @@
 
             // SOFA JRaft (6 items)
             { project: 'SOFA JRaft', level: 'Medium', title: 'Sync Recycler from Netty', desc: '修复内存泄漏，同步 Netty 实现', url: 'https://github.com/sofastack/sofa-jraft/issues/1240' },
-            { project: 'SOFA JRaft', level: 'Medium', title: 'Critical Vulnerability Fix (CVE)', desc: '升级 hessian/commons-* 跨大版本升级', url: 'https://github.com/sofastack/sofa-jraft/issues/1218' },
+            { project: 'SOFA JRaft', level: 'Medium', title: 'Critical Vulnerability Fix (CVE)', desc: '升级 hession/commons-* 跨大版本升级', url: 'https://github.com/sofastack/sofa-jraft/issues/1218' },
             { project: 'SOFA JRaft', level: 'Medium', title: 'Upgrade Third-party Libs', desc: '升级 RocksDB/protobuf/Disruptor 等', url: 'https://github.com/sofastack/sofa-jraft/issues/1211' },
             { project: 'SOFA JRaft', level: 'Easy', title: 'Proposal: Cleanup unused imports', desc: '全项目清理 unused 代码', url: 'https://github.com/sofastack/sofa-jraft/issues/1173' },
             { project: 'SOFA JRaft', level: 'Medium', title: 'AssertionError in AppendEntries', desc: '并发 shutdown 下的 null 检查与降级', url: 'https://github.com/sofastack/sofa-jraft/issues/1091' },
@@ -71,7 +72,7 @@
             { project: 'SOFARPC', level: 'Easy', title: 'Fix Fury instance FGC issue', desc: 'ThreadLocalFury 导致的内存与 FGC 问题', url: 'https://github.com/sofastack/sofa-rpc/issues/1424' },
             { project: 'SOFARPC', level: 'Easy', title: 'Javassist Interface Method Issue', desc: '处理接口重复方法，建议改用 Bytebuddy', url: 'https://github.com/sofastack/sofa-rpc/issues/1384' },
             { project: 'SOFARPC', level: 'Medium', title: 'Support custom exception retry', desc: '允许用户灵活控制哪些异常可以重试', url: 'https://github.com/sofastack/sofa-rpc/issues/1362' },
-            { project: 'SOFARPC', level: 'Easy', title: 'Dubbo virtualHost Config Fix', desc: '解决 Dubbo 协议注册中心地址错误问题', url: 'https://github.com/sofastack/sofa-rpc/issues/1119' },
+            { project: 'SOFARPC', level: 'Easy', title: 'Dubbo ProtocolConfig Fix', desc: '解决 Dubbo 协议注册中心地址错误问题', url: 'https://github.com/sofastack/sofa-rpc/issues/1119' },
             { project: 'SOFARPC', level: 'Easy', title: 'ServerConfig Random Port Fix', desc: '解决随机端口下 getPort() 返回 0 的问题', url: 'https://github.com/sofastack/sofa-rpc/issues/1022' },
 
             // SOFABoot (9 items)
@@ -105,21 +106,21 @@
                 div.innerHTML = `
                     <div class="flex-grow mb-4">
                         <div class="flex justify-between items-start mb-3">
-                            <span class="text-[9px] font-bold text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20 uppercase">${item.project}</span>
+                            <span class="text-[9px] font-bold text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20 uppercase tracking-tighter">${item.project}</span>
                             <span class="px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tag-${lvl}">${item.level}</span>
                         </div>
                         <h3 class="text-sm font-bold mb-2 leading-tight min-h-[2.5rem]">${item.title}</h3>
                         <p class="text-gray-500 text-[11px] leading-relaxed line-clamp-2">${item.desc}</p>
                     </div>
-                    <a href="${item.url}" target="_blank" class="block text-center w-full py-2 rounded bg-blue-600 hover:bg-blue-500 text-[11px] font-bold transition-transform active:scale-95">
-                        GET STARTED
+                    <a href="${item.url}" target="_blank" class="block text-center w-full py-2.5 rounded bg-blue-600 hover:bg-blue-500 text-[11px] font-bold transition-all active:scale-95">
+                        VIEW ISSUE & CLAIM
                     </a>
                 `;
                 container.appendChild(div);
             });
         }
 
-        // Run on load
+        // Initialize
         filterProject('all', document.querySelector('.tab-btn'));
     </script>
 </body>
